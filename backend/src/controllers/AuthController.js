@@ -82,6 +82,16 @@ export const refresh = (req, res) => {
   });
 };
 
+// ✅ Signout
+export const signout = (req, res) => {
+  res.clearCookie("refreshToken", {
+    httpOnly: true,
+    sameSite: "strict",
+    secure: false,
+  });
+  res.json({ message: "Signed out successfully" });
+};
+
 // ✅ Protected Route Example
 export const protectedRoute = (req, res) => {
   const authHeader = req.headers.authorization;

@@ -5,6 +5,7 @@ const authRouter = Router();
 
 authRouter.post("/signup", authController.signup); // Middleware must be added
 authRouter.post("/login", authController.login);
+authRouter.post("/signout", authController.signout);
 authRouter.get("/refresh", authController.refresh);
 authRouter.get("/protected", authController.protectedRoute);
 
